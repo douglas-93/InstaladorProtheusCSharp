@@ -27,6 +27,11 @@ namespace InstaladorProtheus
         }
         public async void btnInstalar_Click(object sender, EventArgs e)
         {
+            await CopiarArquivo();
+        }
+
+        private async Task CopiarArquivo()
+        {
             if (!File.Exists(txtOrigem.Text))
             {
                 MessageBox.Show("Arquivo de origem não encontrado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
